@@ -1,0 +1,162 @@
+@import "../../global.scss";
+
+.works {
+    background-color: $mainColor;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .arrow { 
+       font-size: 90px;
+       position: absolute; 
+       color: white;
+       cursor: pointer;
+
+       @include mobile { 
+        display: none;
+       }
+        
+       &.left {
+        left: 200px;  
+       }
+
+       &.right {
+        right: 200px; 
+       }
+    }
+
+    .slider {
+      
+        height: 500px;
+        display: flex;
+        position: absolute;
+        left: 0; // will change when come new slider
+        transition: all 1s ease-out;
+
+        @include mobile { 
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+           }
+
+        .container {
+         
+            width: 100vw;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         
+
+            .item { 
+                width: 800px;
+                height: 100%; //cover height slider 
+                background-color: white;
+                border-radius: 20px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include mobile { 
+                    width: 80%;
+                    height: 150px;
+                    margin: 15px 0;
+                   }
+
+
+                .left { 
+                    flex: 4;
+                    height: 80% ;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .leftContainer {
+                        width: 90%;
+                        height: 70%;
+                       
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        @include mobile { 
+                            width: 100%;
+                            height: 100%;
+                          }
+
+                        .imgContainer { 
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: skyblue;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            @include mobile { 
+                                width: 20px;
+                                height: 20px;
+                              }
+
+                            img { 
+                                width: 25px;
+
+                                @include mobile { 
+                                    width: 15px;
+                                  }
+
+                            }
+
+                        }
+
+                        h2{
+                            font-size: 20px;
+
+                            @include mobile { 
+                                font-size: 13px;
+                              }
+                        }
+
+                        p {
+                            font-style: 13px;
+                            text-align: center;
+                            @include mobile { 
+                                display: none;
+                              }
+                        }
+
+                        span{
+                            font-style: 12px;
+                            font-weight: 600;
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .right { 
+                    
+                    flex: 8;
+                    height: 100% ;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    overflow: hidden; //define parent !
+
+                    img { 
+                        width: 400px;
+                        transform: rotate(-10deg);
+                    }
+                }
+            }
+        }
+
+    }
+
+
+}
